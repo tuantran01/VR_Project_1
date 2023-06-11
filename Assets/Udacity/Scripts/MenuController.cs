@@ -24,6 +24,21 @@ public class MenuController : MonoBehaviour
     public void OnClick()
     {
         SceneManager.LoadScene("Maze");
+        DontDestroyOnLoad(GameObject.Find("Directional Light"));
+    }
+
+    public void Next()
+    {
+        SceneManager.LoadScene("Maze 1");
+    }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("Start");
+        if (GameObject.Find("Directional Light") != null)
+        {
+            Destroy(GameObject.Find("Directional Light"));
+        }
     }
 
     public void Quit()
